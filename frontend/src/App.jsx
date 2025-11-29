@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="min-h-screen  bg-gray-900 text-white">
       <div className=" bg-white p-8 flex flex-col items-center text-black font-mono text-2xl">  {/*This is a comment, this is the top white bar */}
-        <p className="text-black">Currently Building... Just a template with functions for now..</p>
+        <p className="text-black">Currently Building.....</p>
       </div>
       <div className="flex flex-col items-center justify-center mt-40">
       <form className="flex flex-col  bg-white w-1/3  p-5 rounded-lg text-black 
