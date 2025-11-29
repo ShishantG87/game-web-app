@@ -14,7 +14,7 @@ function App() {
       <div className="flex flex-col items-center justify-center mt-40">
       <form className="flex flex-col  bg-white w-1/3  p-5 rounded-lg text-black 
        text-2xl shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-        <h2 className="text-2xl font-bold text-black mb-10 font-bold text-center">Form Title</h2>
+        <h2 className="text-2xl font-bold text-black mb-10 font-bold text-center">Login</h2>
         <div className="flex flex-col space-y-1 font-mono">
           <label className="text-black mb-1 ">
             Email
