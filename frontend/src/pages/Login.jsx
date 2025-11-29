@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 
 function Login() {
-
+const [error, setError] = useState("");
 const navigate = useNavigate();
 
 const [email, setEmail] = useState("");
@@ -15,7 +15,7 @@ const handleLogin = (e) => {
     if (email === "web215user@gmail.com" && password === "1234") {
         navigate("/home");
     } else {
-        alert("Invalid credentials");
+        setError("Invalid credentials");
     }
 }
 
@@ -45,6 +45,11 @@ return (
             <input type="password" className="p-2 rounded bg-gray-700 text-white outline-none mb-10 w-full " placeholder='password' 
             value={password} onChange={(e) => setPassword(e.target.value)}/>
             </div>
+            {error && (
+                <p className="text-red-500 text-sm mb-4 text-center">
+                    {error}
+                </p>
+             )}
             <div className="flex justify-center">
             <button type="submit" className="w-40 bg-gray-700 hover:bg-red-700 text-white font-medium p-3 rounded-lg transition mb-10">
                 Login
