@@ -1,5 +1,5 @@
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate } from "react-router-dom";
 
 function Login() {
@@ -7,6 +7,14 @@ const [error, setError] = useState("");
 const navigate = useNavigate();
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
+
+
+ useEffect(() => {
+    const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+    if (isLoggedIn) {
+      navigate("/Home", { replace: true });
+    }
+  }, [navigate]);
 
 const handleLogin = (e) => {
   e.preventDefault();
