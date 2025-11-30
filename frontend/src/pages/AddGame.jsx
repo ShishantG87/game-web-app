@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
+
 function AddGame() {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
@@ -11,8 +14,7 @@ function AddGame() {
   const [success, setSuccess] = useState("");
   const navigate = useNavigate();
 
-  // TODO: change base URL to your Render backend when deployed
-  const API_BASE = "http://localhost:5000";
+
 
   useEffect(() => {
     fetch(`${API_BASE}/api/platforms`)
@@ -59,7 +61,7 @@ function AddGame() {
       setRating("");
       setSelectedPlatforms([]);
 
-      // optional: go back to home after a short delay
+      
       setTimeout(() => navigate("/home"), 800);
     } catch (err) {
       setError("Error creating game.");

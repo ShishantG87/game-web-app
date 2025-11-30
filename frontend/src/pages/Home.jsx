@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL;
+
 function Home() {
   const [games, setGames] = useState([]);
   const [platforms, setPlatforms] = useState([]);
@@ -8,7 +10,7 @@ function Home() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/platforms") // https://game-web-app-server.onrender.com/ or  http://localhost:5000/api/platforms
+    fetch(`${API_BASE}/api/platforms`) 
       .then((res) => res.json())
       .then((data) => setPlatforms(data))
       .catch((err) => console.error("Failed to fetch platforms", err));
@@ -19,7 +21,7 @@ function Home() {
     const fetchGames = async () => {
       setLoading(true);
       try {
-        let url = "https://game-web-app-server.onrender.com/api/games";
+        let url = `${API_BASE}/api/games`;
 
         if (selectedPlatform !== "all") {
           url += `?platform=${selectedPlatform}`;

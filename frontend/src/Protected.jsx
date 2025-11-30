@@ -1,6 +1,6 @@
 import { Navigate } from "react-router-dom";
 
-function ProtectedRoute({ children }) {
+function Protected({ children }) {
   const isLoggedIn = localStorage.getItem("loggedIn") === "true";
 
  
@@ -11,4 +11,4 @@ function ProtectedRoute({ children }) {
   return children;
 }
 
-export default ProtectedRoute;
+export default Protected;
