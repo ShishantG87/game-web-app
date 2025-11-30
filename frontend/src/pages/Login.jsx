@@ -5,19 +5,22 @@ import { useNavigate } from "react-router-dom";
 function Login() {
 const [error, setError] = useState("");
 const navigate = useNavigate();
-
 const [email, setEmail] = useState("");
 const [password, setPassword] = useState("");
 
 const handleLogin = (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (email === "web215user@gmail.com" && password === "1234") {
-        navigate("/home");
-    } else {
-        setError("Invalid credentials");
-    }
-}
+  if (email === "web215user@gmail.com" && password === "1234") {
+   
+    localStorage.setItem("loggedIn", "true");
+    setError("");
+    navigate("/home");
+  } else {
+    setError("Invalid credentials");
+  }
+};
+
 
 
 return (
