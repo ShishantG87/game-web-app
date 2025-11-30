@@ -28,9 +28,16 @@ function Navbar() {
       </Link>
 
       <div className="flex gap-4 items-center">
-        {/*<Link to="/home" className="hover:text-gray-300">
-          Home
-        </Link>*/}
+         {isLoggedIn && (
+          <Link to="/home" className="hover:text-gray-300">
+            Home
+          </Link>
+        )}
+         {isLoggedIn && (
+          <Link to="/add-game" className="hover:text-gray-300">
+            Add Game
+          </Link>
+        )}
 
         {isLoggedIn && (
           <button

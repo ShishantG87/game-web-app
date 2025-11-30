@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import Protected from "./Protected";
+import AddGame from "./pages/AddGame";
+import Protected from "./Protected"; 
 
 function App() {
   return (
@@ -16,6 +17,15 @@ function App() {
           element={
             <Protected>
               <Home />
+            </Protected>
+          }
+        />
+
+        <Route
+          path="/add-game"
+          element={
+            <Protected>
+              <AddGame />
             </Protected>
           }
         />

@@ -8,7 +8,7 @@ function Home() {
 
 
   useEffect(() => {
-    fetch("https://game-web-app-server.onrender.com/api/platforms") // https://game-web-app-server.onrender.com/ or  http://localhost:5000/api/platforms
+    fetch("http://localhost:5000/api/platforms") // https://game-web-app-server.onrender.com/ or  http://localhost:5000/api/platforms
       .then((res) => res.json())
       .then((data) => setPlatforms(data))
       .catch((err) => console.error("Failed to fetch platforms", err));
