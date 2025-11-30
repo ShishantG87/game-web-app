@@ -8,7 +8,7 @@ function Home() {
 
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/platforms")
+    fetch("https://game-web-app-server.onrender.com/api/platforms") // https://game-web-app-server.onrender.com/ or  http://localhost:5000/api/platforms
       .then((res) => res.json())
       .then((data) => setPlatforms(data))
       .catch((err) => console.error("Failed to fetch platforms", err));
@@ -19,7 +19,7 @@ function Home() {
     const fetchGames = async () => {
       setLoading(true);
       try {
-        let url = "http://localhost:5000/api/games";
+        let url = "https://game-web-app-server.onrender.com/api/games";
 
         if (selectedPlatform !== "all") {
           url += `?platform=${selectedPlatform}`;
