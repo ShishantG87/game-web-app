@@ -1,9 +1,8 @@
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import ProtectedRoute from "./ProtectedRoute";
+import Protected from "./Protected";
 
 function App() {
   return (
@@ -15,9 +14,9 @@ function App() {
         <Route
           path="/home"
           element={
-            <ProtectedRoute>
+            <Protected>
               <Home />
-            </ProtectedRoute>
+            </Protected>
           }
         />
       </Routes>
